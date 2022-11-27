@@ -1,0 +1,179 @@
+PerspectiveCamera {
+    center 270 270 -600
+    direction 0.0 0.0 1.0
+    up 0 1 0
+    angle 52
+    width 500
+    height 500
+}
+
+Background {
+    color 0.2 0.2 0.2
+}
+
+Materials {       
+    numMaterials 11
+
+    Material { 
+        emissionColor 40 40 40
+    }
+    Material { 
+        diffuseColor 0.63 0.65 0.65
+        color 1 1 1
+        diff 1.0
+        texture ../models/bg1.jpg
+    }
+
+    Material { 
+        diffuseColor 0.63 0.65 0.65
+        color 1 1 1
+        diff 1.0
+        texture ../models/comicbg.jpg
+    }
+
+
+    Material { 
+        diffuseColor 0.63 0.65 0.65
+        color 1 1 1
+        diff 1.0
+        texture ../models/sea.jpg
+    }
+    Material { 
+        diffuseColor 0.63 0.65 0.65
+        color 1 1 1
+        diff 1.0
+        texture ../models/ceil.jpg
+    }
+
+    Material { 
+        diffuseColor 0.34 0.85 0.29
+        color 1 1 1
+        diff 1.0
+    }
+    Material { 
+        diffuseColor 0.7 0.7 0.7
+        color 1 1 1
+        diff 1.0
+    }
+    Material { 
+        color 1.0 1.0  1.0
+        refl 4.0
+    }
+    Material { 
+        color 0.3 0.5  1.0
+        refr 1.0
+        Ks 0.1
+    }
+
+    Material { 
+        color 1.0 0.4  0.2
+        refr 1.0
+        Ks 0.1
+    }
+
+    Material { 
+        color 1.0 0.7  0.9
+        refr 1.0
+        Ks 0.1
+    }
+}
+
+Objects
+{
+    numObjects 12
+
+    Mesh {
+        filepath ../models/light.obj
+        MaterialIndex 1
+        Transform {
+            Scale  1 1 1  
+            }
+    }
+
+    Mesh {
+        filepath ../models/light2.obj
+        MaterialIndex 1
+        Transform {
+            Scale  1 1 1  
+            }
+    }
+
+    Mesh {
+        filepath ../models/light3.obj
+        MaterialIndex 1
+        Transform {
+            Scale  1 1 1  
+            }
+    }
+
+
+    Rectangle {
+        filepath ../models/right.obj
+        MaterialIndex 2
+        Transform {
+            Scale  1 1  1
+            }
+    }
+
+    Rectangle {
+        filepath ../models/left.obj
+        MaterialIndex 3
+        Transform {
+            Scale   1 1  1
+            }
+    }
+
+
+    Rectangle {
+        filepath ../models/back.obj
+        MaterialIndex 4
+        Transform {
+            Scale   1 1  1
+            }
+    }
+
+    Rectangle {
+        filepath ../models/ceil.obj
+        MaterialIndex 5
+        Transform {
+            Scale  1 1  1
+            }
+    }
+
+    Rectangle {
+    filepath ../models/floor.obj
+    MaterialIndex 7
+    Transform {
+        Scale  1 1  1
+        }
+    }
+
+
+    Mesh {
+    filepath ../models/dragon.obj
+    MaterialIndex 10
+    Transform {
+        Scale  120 120  120
+        YRotate 45
+        Translate 120 150 300
+        }
+    }
+
+    Sphere {
+        radius 150
+        center 350    350   350
+        MaterialIndex 4
+    }
+
+    Sphere {
+        radius 150
+        center 350    250   175
+        MaterialIndex 8
+    }
+
+    Sphere {
+        radius 90
+        center 100    100   100
+        MaterialIndex 11
+    }
+}

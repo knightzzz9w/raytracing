@@ -1,0 +1,66 @@
+PerspectiveCamera {
+    center 2.7 2.7 -6
+    direction 0.0 0.0 1.0
+    up 0 1 0
+    angle 60
+    width 400
+    height 400
+}
+
+Background {
+    color 0.2 0.2 0.2
+}
+
+Materials {       
+    numMaterials 3
+
+    Material { 
+        emissionColor 23 23 23
+    }
+    Material { 
+        diffuseColor 0 1 1
+        color 1 1 1
+        diff 1.0
+        texture ../models/bg1.jpg
+    }
+    Material { 
+        diffuseColor 1 1 1
+        color 1 1 1
+        diff 1.0
+    }
+}
+
+Objects
+{
+    numObjects 4
+
+    Sphere {
+        radius 2
+        center 2.5    3   3
+        MaterialIndex 1
+    }
+
+    Rectangle {
+        filepath ../models/right.obj
+        MaterialIndex 3
+        Transform {
+            Scale  0.01  0.01  0.01
+            }
+    }
+    Mesh {
+        filepath ../models/left.obj
+        MaterialIndex 3
+        Transform {
+            Scale  0.01  0.01  0.01
+            }
+    }
+
+
+    Mesh {
+        filepath ../models/floor.obj
+        MaterialIndex 3
+        Transform {
+            Scale   0.01  0.01  0.01
+            }
+    }
+}

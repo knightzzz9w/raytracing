@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../lib/libALL_LIB.a  CMakeFiles/ALL_LIB.dir/include/vecmath/src/Matrix2f.cpp.o CMakeFiles/ALL_LIB.dir/include/vecmath/src/Matrix3f.cpp.o CMakeFiles/ALL_LIB.dir/include/vecmath/src/Matrix4f.cpp.o CMakeFiles/ALL_LIB.dir/include/vecmath/src/Quat4f.cpp.o CMakeFiles/ALL_LIB.dir/include/vecmath/src/Vector2f.cpp.o CMakeFiles/ALL_LIB.dir/include/vecmath/src/Vector3f.cpp.o CMakeFiles/ALL_LIB.dir/include/vecmath/src/Vector4f.cpp.o CMakeFiles/ALL_LIB.dir/include/vecmath/src/vecio.cpp.o
+/usr/bin/ranlib ../lib/libALL_LIB.a

@@ -1,0 +1,103 @@
+<h1 id="代码说明">代码说明</h1>
+<h2 id="说明">说明</h2>
+<pre><code>框架的代码由以下一些代码构成。</code></pre>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> AreaLight.hpp       <span class="co"># 描述面光源的头文件</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> Bounds3.hpp         <span class="co"># 包围盒类</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> BVH.cpp             <span class="co"># BVH</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> BVH.hpp             <span class="co"># BVH头文件</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> CMakeLists.txt      <span class="co"># cmake list</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> global.hpp          <span class="co"># common的一些函数以及定义</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> Intersection.hpp    <span class="co"># 光线和物体相交类</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> Light.hpp           <span class="co"># 光源类</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> main.cpp            <span class="co"># 主函数</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> Material.hpp        <span class="co"># 材料类</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> models</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   └── bunny</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>       └── bunny.obj   <span class="co"># bunny 模型</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> Object.hpp          <span class="co"># 物体类</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> OBJ_Loader.hpp      <span class="co"># 加载obj文件</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> Ray.hpp             <span class="co"># 光线类</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> README.md</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> Renderer.cpp        <span class="co"># 渲染</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> Renderer.hpp        <span class="co"># 渲染</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> Scene.cpp           <span class="co"># 场景</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> Scene.hpp           <span class="co"># 场景 </span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> Sphere.hpp          <span class="co"># 球体</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> Triangle.hpp        <span class="co"># 三角面类</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> Vector.cpp          <span class="co"># 数学矢量</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> Vector.hpp          <span class="co"># 数学矢量</span></span></code></pre></div>
+<h2 id="框架说明">框架说明</h2>
+<pre><code>本框架不依赖于操作平台和第三方库，没有采用GUI界面，只需要系统中安装有c工具链（包含make）和cmake即可。</code></pre>
+<p>使用方法如下：</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> build         <span class="co"># 创建编译文件夹</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> build            <span class="co"># 进入build文件夹</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cmake</span> ..            <span class="co"># 根据父文件夹的cmakelist生成makefile</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span>                <span class="co"># 编译出可执行程序</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">./RayTracing</span>        <span class="co"># 运行程序</span></span></code></pre></div>
+<p>运行生成的可执行文件<code>RayTracing</code>后，渲染结果存储在<code>binary.ppm</code>文件中。</p>
+<p>初始情况下，会渲染获得蓝色背景板下，一个白色的圆，这是在没有光照模型下，将光追遇到球体时，颜色值设置为球体原有的颜色白色造成的（消隐显示）。</p>
+<figure>
+<img src="result.jpg" alt="result" />
+<figcaption aria-hidden="true">result</figcaption>
+</figure>
+<h2 id="渲染流程">渲染流程</h2>
+<ul>
+<li>从 main
+函数开始。我们定义场景的参数，添加物体到场景中，并设置其材质，然后将光源添加到场景中。</li>
+<li>调用 Render(scene)
+函数。在遍历所有像素的循环里，生成对应的光线并将返回的颜色保存在帧缓冲区（framebuffer）中。在渲染过程结束后，帧缓冲区中的信息将被保存为图像。</li>
+<li>在生成像素对应的光线后，我们调用 CastRay
+函数，通过Scene::intersect获得交点。</li>
+<li>然后，我们在此交点执行着色。我们设置了三种不同的着色情况。</li>
+</ul>
+<h2 id="需要完成的部分">需要完成的部分</h2>
+<blockquote>
+<p>完成基本功能需要填写的代码在代码中使用TODO标注了，但使用框架代码获得满分需要修改的代码很多，对于有一定基础的同学，建议从头开始实现。</p>
+</blockquote>
+<ul>
+<li>如果采用BVH
+<ul class="task-list">
+<li><input type="checkbox"
+disabled="" /><code>Scene</code>中存在useBVH变量，用于控制是否使用BVH，<code>castRay</code>中根据该变量选择渲染方式。</li>
+<li><input type="checkbox"
+disabled="" />包围盒Bounds3.hpp中判断包围盒是否相交部分<code>Bounds3::IntersectP</code></li>
+<li><input type="checkbox" disabled="" /><code>BVH.cpp</code>
+中，递归构造BVH树型结构<code>recursiveBuild</code>,求光线ray与BVH的交点<code>BVHAccel::getIntersection</code></li>
+</ul></li>
+<li>如果不采用BVH或采用其他加速方法
+<ul class="task-list">
+<li><input type="checkbox"
+disabled="" />修改<code>Scene</code>中关于<code>castRay,intersect</code>相关部分的代码，并将使用的方法数据结构（例如树）在<code>Scene</code>中;</li>
+</ul></li>
+<li><input type="checkbox"
+disabled="" /><code>main</code>函数对场景的设置加载;</li>
+<li><input type="checkbox" disabled="" /><code>Renderer::Render</code>
+发射光线，得到颜色，存储在帧缓冲区;</li>
+<li><input type="checkbox"
+disabled="" /><code>Triangle::getIntersection,rayTriangleIntersect</code>三角形与光线交;</li>
+<li><input type="checkbox"
+disabled="" /><code>Scene::castRay</code>中计算得到每个像素的最终的颜色的方式，对于透明的，镜面的物体材质需要考虑递归调用<code>Scene::castRay</code>函数;</li>
+<li><input type="checkbox"
+disabled="" />自行设置配置文件的读取加载;需要将局部坐标系转换成全局坐标系</li>
+<li><input type="checkbox" disabled="" />自行添加代码实现物体的纹理;
+（可能需要修改<code>Material</code>）</li>
+<li><input type="checkbox"
+disabled="" />（可能需要）封装相机类，发射ray实现相机位置的改变</li>
+<li><input type="checkbox"
+disabled="" />（可能需要）更改<code>Renderer</code>和<code>Scene</code>中的部分代码，修改光照模型;</li>
+</ul>
+<h2 id="注意">注意</h2>
+<ul>
+<li><strong>本次作业的开放性和自由度很高，本次作业可以不依赖这个框架实现，完全自行实现，使用任意框架和语言都可以。本框架仅是为了防止部分同学无从下手提供</strong></li>
+<li><strong>可以修改本框架内的任意代码，只需要最终能够完成作业要求即可。</strong></li>
+<li><strong>独立完成，切勿抄袭</strong></li>
+<li><strong>你可能需要将最后输出图像的ppm格式转换为其他可以直接可以打开的图像格式（例如使用ffmpeg在转换，类Unix系统中一般可以直接打开该文件，但windows系统不依赖第三方软件的情况下无法直接打开ppm），或者将Renderer::Render中的帧缓冲区写入到可以直接打开的图像格式中</strong></li>
+<li><strong>建议先实现<code>Scene::castRay</code>,检查各类材料的球渲染无问题后再实现其他类型的object</strong></li>
+<li><strong>想实现全部/更多功能的同学，请自行设计实现，本框架的拓展性有限，修改付出的成本可能较高</strong></li>
+<li><strong>如果依赖本框架实现，创建了新文件或进行了一些其他的修改，可能需要修改<code>CMakeLists.txt</code>，本次作业也不要求必须使用cmake，可以采用其他熟悉的编译方法。</strong></li>
+<li><strong>本框架没有GUI，不方便后续的调试等，想要完成加分项/更多要求的同学请谨慎选用本框架。</strong></li>
+<li><strong>请同学们预留足够的时间用于渲染</strong></li>
+</ul>

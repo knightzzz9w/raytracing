@@ -1,0 +1,110 @@
+PerspectiveCamera {
+    center 2.7 2.7 -5
+    direction 0.0 0.0 1.0
+    up 0 1 0
+    angle 90
+    width 400
+    height 400
+}
+
+Background {
+    color 0.2 0.2 0.2
+}
+
+Materials {       
+    numMaterials 6
+
+    Material { 
+        emissionColor 12 12 12
+    }
+    Material { 
+        diffuseColor 0 1 1
+        color 1 1 1
+        diff 1.0
+        texture ../models/bg1.jpg
+    }
+    Material { 
+        diffuseColor 0.3 1 1
+        color 0.2 0.5 1
+        diff 1.0
+    }
+    Material { 
+        diffuseColor 0.5 1 0.2
+        color 1 1 0
+        diff 1.0
+    }
+    Material { 
+        diffuseColor 1 1 1
+        color 1.0 0.5  0.3
+        refl 0.7
+        Ks 0.1
+    }
+    Material { 
+        diffuseColor 1 1 0
+        color 0.3 0.5  1.0
+        refr 0.7
+        Ks 0.1
+    }
+}
+
+Objects
+{
+    numObjects 7
+
+    Mesh {
+        filepath ../models/light.obj
+        MaterialIndex 1
+        Transform {
+            Scale  0.01 0.01 0.01
+            }
+    }
+
+
+    Sphere {
+        radius 1
+        center 4   1.25   1
+        MaterialIndex 3
+    }
+
+
+
+    Mesh {
+        filepath ../models/bunny/bunny.obj
+        MaterialIndex 6
+        Transform {
+            Scale  10 10 10
+            Translate 4.2 2.0 2
+            }
+    }
+    Mesh {
+        filepath ../models/dragon.obj
+        MaterialIndex 5
+        Transform {
+            Translate 1.9 1.5 3
+            }
+    }
+
+    Rectangle {
+        filepath ../models/right.obj
+        MaterialIndex 2
+        Transform {
+            Scale  0.01 0.01 0.01
+            }
+    }
+
+    Rectangle {
+        filepath ../models/left.obj
+        MaterialIndex 3
+        Transform {
+            Scale   0.01 0.01 0.01
+            }
+    }
+
+    Mesh {
+        filepath ../models/floor.obj
+        MaterialIndex 4
+        Transform {
+            Scale   0.01 0.01 0.01
+            }
+    }
+}
